@@ -1,6 +1,7 @@
 import Form from "@/app/ui/invoices/create-form";
 import Breadcrumbs from "@/app/ui/invoices/breadcrumbs";
 import { fetchInvoiceById, fetchCustomers } from '@/app/lib/data';
+import EditInvoiceForm from "@/app/ui/invoices/edit-form";
 
 export default async function Page({params}: {params: { id: string}}) {
     const id = params.id;
@@ -20,7 +21,7 @@ export default async function Page({params}: {params: { id: string}}) {
                     },
             ]} 
             />
-            <Form invoice={invoice} customers={customers} />
+            <EditInvoiceForm invoice={invoice} customers={customers} />
         </main>
     )
 }
